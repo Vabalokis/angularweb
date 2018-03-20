@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --mainbackground:whitesmoke;
+    --headerbackground:#36585a;
+}
+
+* {
+    background-color: var(--mainbackground);
+    margin: 0;
+    padding: 0;
+}
+
+
+.grid {
+    display:grid;
+    grid-template-columns: 1fr 600px 600px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "header header header header"
+                         ". content content ."
+                         "footer footer footer footer";
+}
+
+.header {
+    grid-area: header;
+    background-color: var(--headerbackground);
+    height: 35px;
+    display: block;
+    color:white;
+}
+
+
+.content {
+    grid-area: content;
+    background-color: grey;
+    height: 600px;
+    display: block;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: azure;
+    height: 300px;
+    display: block;
+}
