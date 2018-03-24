@@ -1,11 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --mainbackground:whitesmoke;
-    --headerbackground:#36585a;
+    --headerbackground:#387A64;
+    --buttoncolor:#15855F;
+    --footerbackground:#0F6146;
+    --navigationcolor: whitesmoke;
 }
 
 * {
-    background-color: var(--mainbackground);
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -13,32 +15,225 @@
 
 .grid {
     display:grid;
-    grid-template-columns: 1fr 600px 600px 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-template-areas: "header header header header"
-                         ". content content ."
-                         "footer footer footer footer";
+    grid-template-areas: "header header"
+                         "content content"
+                         "contact contact"
+                         "footer footer";
 }
+
+.contact {
+    grid-area: contact;
+}
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+}
+
+.container {
+    position: relative;
+    margin-top: 300px;
+    text-align: left;
+    color: white;
+}
+
 
 .header {
     grid-area: header;
     background-color: var(--headerbackground);
-    height: 35px;
+    
     display: block;
-    color:white;
+    color:rgb(145, 139, 139);
+
+    display:grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: ". nav nav ."
+    "headpix headpix headpix headpix";
 }
 
+.header nav {
+    grid-area: nav;
+}
+
+.header ul {
+    margin-right: 50px;
+}
+
+.header li {
+   background-color: rgba(0, 0, 0, 0);
+   display: inline-block;
+   margin: 5px;
+   float: right;
+}
+
+.header nav a {
+    background: none;
+    margin-top: 5px;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--navigationcolor);
+    
+}
+
+.header .headpix {
+    grid-area: headpix;
+    background-image: url("./assets/cupback.jpg");
+    height: 500px; 
+    background-attachment: fixed;
+    background-position-y: 200px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    background-color:var(--buttoncolor);
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+
+.tag {
+    padding: 4px 7px;
+    border-radius: 6px;
+    background-color:var(--buttoncolor);
+    color: white;
+}
+
+
+.taginfo {
+    padding: 4px 7px;
+    border-radius: 6px;
+    background-color:grey;
+    color: white;
+    width: 160px;
+    margin: 3px 0;
+}
+
+
+.taglist li {
+    display: inline-block;
+    list-style-type: none;
+}
 
 .content {
     grid-area: content;
-    background-color: grey;
-    height: 600px;
+    background-color: rgb(221, 221, 221);
     display: block;
+    display:grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: ". contentco contentco .";
+
 }
+
+.contentco {
+    grid-area: contentco;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "contentcoleft contentcoright";
+    margin: 50px 0;
+}
+
+.contentcoleft {
+    grid-area: contentcoleft;
+}
+
+.contentcoright {
+    grid-area: contentcoright;
+}
+
+.item {
+    margin: 110px 15px;
+}
+
+
+.contactgrid {
+    display:grid;
+    grid-template-columns: 1fr 500px 500px 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: "map map map map"
+                         ". infocont formcont .";
+}
+
+.contactgrid li {
+    list-style-type: none;
+}
+
+.formcont {
+    grid-area: formcont;
+    margin: 70px 40px;
+}
+
+.formcont li {
+    margin: 7px 0;
+}
+
+.formcont input {
+    border-style: none;
+    float: right;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 10px;
+    padding: 3px 3px;
+}
+
+.formcont textarea {
+    border-style: none;
+    float: right;
+    width: -100px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 10px;
+}
+
+.tel {
+    margin-left: 25px;
+}
+
+.formcont h2 {
+    margin: 15px 0;
+}
+
+.infocont {
+    grid-area: infocont;
+    margin: 70px 40px;
+}
+
+.infocont h2 {
+    margin: 15px 0;
+}
+
 
 .footer {
     grid-area: footer;
-    background-color: azure;
-    height: 300px;
-    display: block;
+    background-color:var(--footerbackground) ;
+    height: 150px;  
+    text-align: center;
+}
+
+.footer p {
+    color: white;
+    margin-top: 20px;   
+}
+
+.footer img {
+    margin-top: 35px;
+}
+
+#map {
+    grid-area: map;
+    height: 400px;
+    width: 100%;
 }
