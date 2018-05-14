@@ -1,18 +1,20 @@
+<div class="logo" >
+<img src="./assets/derail_white.png">
+</div>
 <nav>
     <ul>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">PROJECTS</a></li>
-        <li><a href="#">HOME</a></li>
+        <li><a [ngx-scroll-to]="'#contact'" >CONTACT</a></li>
+        <li><a [ngx-scroll-to]="'#projects'" >PROJECTS</a></li>
+        <li><a [ngx-scroll-to]="'#maininfo'" >HOME</a></li>
     </ul>
 </nav>
 
-<div class="headpix">
-    <div class="container">
-        <div class="centered">  
-            <h1>Deividas Raila</h1>
-            <p>Junior web developer looking for work!</p><br>
-            <a href="#">CONTACT ME</a>
-        </div> 
-    </div>     
+<div class="mbnav">
+        <a [ngx-scroll-to]="'#maininfo'" >HOME</a>
+        <a [ngx-scroll-to]="'#projects'" >PROJECTS</a>
+        <a [ngx-scroll-to]="'#contact'" >CONTACT</a>     
 </div>
+
+
+
 

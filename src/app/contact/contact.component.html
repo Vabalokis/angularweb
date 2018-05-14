@@ -1,30 +1,33 @@
 <div class="contactgrid">
 
-    <div id="map"></div>
 
+    <agm-map id="map"  [disableDefaultUI]="true" [styles]='[{"featureType":"water","elementType":"geometry","stylers":[{"color":"#a0d6d1"},{"lightness":17}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":20}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#dedede"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#dedede"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#dedede"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#ffffff"},{"lightness":16}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#f1f1f1"},{"lightness":21}]},{"elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#ffffff"},{"lightness":16}]},{"elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#333333"},{"lightness":40}]},{"elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#f2f2f2"},{"lightness":19}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#fefefe"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#fefefe"},{"lightness":17},{"weight":1.2}]}]' [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+        <agm-marker [iconUrl]="'assets/marker.png'" [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+
+    <h1>CONTACT ME</h1>
     <div class="infocont">
-    <h2>Personal information</h2>
     <ul>
       <li>
-          <div class="taginfo"><p class="tel">+37060395541</p></div>
+          <div class="taginfo"><a class="tel" href="tel:+37060395541" data-rel="external">+37060395541</a></div>
       </li>
       <li>
-          <div class="taginfo">vabalokis@yahoo.com</div> 
+          <div class="taginfo"><a href="mailto:vabalokis@yahoo.com" data-rel="external">vabalokis@yahoo.com</a></div> 
       </li>
     </ul>          
     </div>
 
 
     <div class="formcont">
-      <h2>Contact form</h2>
-      <form>
+      <form (submit)="sendEmail(message)">
         <ul>
-          <li>NAME<input type="text"></li>
-          <li>EMAIL<input type="text"></li>
-          <li>MESSAGE<textarea name="message" rows="6" cols="53"></textarea></li>
-          <li><input type="submit" value="SEND"></li>
+          <li><input id="nametextbox" placeholder="NAME" type="text" name="name" [(ngModel)]="message.name"><input id="emailtextbox" placeholder="EMAIL" type="text" name="email" [(ngModel)]="message.email"></li>
+          <li><textarea id="messagetextbox" placeholder=" MESSAGE" name="message"  [(ngModel)]="message.message" ></textarea></li>
+          <li><input id="sndbtn" type="submit" value="SEND"></li>
+          <li><div id="statusbox"></div></li>
         </ul> 
       </form>
     </div>
 
 </div>
+
