@@ -10,11 +10,11 @@ import { AgmCoreModule } from '@agm/core';
 export class ContactComponent implements OnInit {
 
 
-  lat: number = 54.910705;
-  lng: number = 23.919183;
-  zoom: number = 14;
+  lat = 54.910705;
+  lng = 23.919183;
+  zoom = 14;
 
-  
+  message: IMessage = {};
 
 
   constructor(private appService: AppService) {
@@ -22,21 +22,21 @@ export class ContactComponent implements OnInit {
   }
 
 
-  ngOnInit() { 
+  ngOnInit() {
   }
 
-  message: IMessage = {};
+
 
   sendEmail(message: IMessage) {
-    
+
     this.appService.sendEmail(message).subscribe(res => {
-      console.log('AppComponent Success', res); 
+      console.log('AppComponent Success', res);
     }, error => {
-      console.log('AppComponent Error', error); 
-    })
+      console.log('AppComponent Error', error);
+    });
   }
 
- 
+
 
 
 

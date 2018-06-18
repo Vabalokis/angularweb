@@ -8,5 +8,5 @@ import { AppService } from './contact/contact.service';
 })
 export class AppComponent {
   title = 'app';
-  
+
 }
