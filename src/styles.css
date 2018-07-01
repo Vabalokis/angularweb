@@ -1,545 +1,507 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --headerbackground:#387A64;
-    --buttoncolor:#15855F;
-    --footerbackground:#0F6146;
-    --navigationcolor: rgba(255, 255, 255, 0.8);
+  --headerbackground: #387a64;
+  --buttoncolor: #15855f;
+  --footerbackground: #0f6146;
+  --navigationcolor: rgba(255, 255, 255, 0.8);
 }
 
 * {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    padding: 0;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
-
 
 @media only screen and (max-width: 768px) {
+  .header {
+    grid-template-columns: 1fr 1fr 1fr !important;
+    position: relative !important;
+    grid-template-areas:
+      ". logo ."
+      "mobnv mobnv mobnv"
+      "headpix headpix headpix" !important;
+  }
 
-    .header {
-        grid-template-columns: 1fr 1fr 1fr!important;
-        position: relative !important;
-        grid-template-areas: ". logo ."
-                             "mobnv mobnv mobnv"
-                             "headpix headpix headpix" !important;
-    }
+  .content {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas: "contentco contentco" !important;
+  }
 
+  .contactgrid {
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas:
+      "map map"
+      "conthd conthd"
+      "infocont infocont"
+      "formcont formcont" !important;
+  }
 
-    .content {
-        grid-template-columns: 1fr 1fr !important;
-        grid-template-areas: "contentco contentco" !important;
-    
-    }
+  .formcont textarea {
+    max-width: 70% !important;
+    min-width: 70% !important;
+    max-height: 100px !important;
+    min-height: 60px !important;
+  }
 
+  .formcont input {
+    width: 33% !important;
+  }
 
+  .item {
+    margin-left: 15% !important;
+    margin: 0 15px !important;
+    grid-column-start: 1 !important;
+    grid-column-end: 3 !important;
+  }
 
-    .contactgrid {
-    
-        grid-template-columns: 1fr 1fr !important; 
-        grid-template-areas: "map map"
-                             "conthd conthd"
-                             "infocont infocont"
-                             "formcont formcont" !important;
-    }
+  .item2 {
+    margin: 0 10px !important;
+    grid-column-start: 1 !important;
+    grid-column-end: 3 !important;
+    margin-bottom: 40px !important;
+  }
 
-    .formcont textarea {
-        max-width: 70% !important;
-        min-width: 70% !important;
-        max-height: 100px !important;
-        min-height: 60px !important;
-    }
+  .contentco {
+    grid-template-columns: 1fr !important;
+  }
 
-    .formcont input {
-        width: 33% !important;
-    }
+  .txtwrp {
+    margin: 0 !important;
+  }
 
-    .item {
-        margin-left: 15% !important;
-        margin: 0 15px !important;
-        grid-column-start: 1 !important;
-        grid-column-end: 3 !important;
-        
-    }
-    
-    .item2 {
-        margin: 0 10px !important;
-        grid-column-start: 1 !important;
-        grid-column-end: 3 !important;
-        margin-bottom: 40px !important;
-    }
+  .logo {
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
 
-    .contentco {
-        grid-template-columns: 1fr !important;
-    }
+  .lapcont {
+    position: relative !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    margin-top: 40px !important;
+    background: url("./assets/laptop.png") center no-repeat !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". vd .";
+  }
 
-    .txtwrp {
-        margin: 0 !important;
-    }
+  video {
+    grid-area: vd;
+    margin: 62px 0px 0px 0px !important;
+    width: 300px !important;
+  }
 
-    .logo {
-        display: block;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
+  .formcont {
+    margin-top: 0 !important;
+  }
 
-    .lapcont {
-        position:relative !important;
-        margin: 0 auto !important; 
-        width: 100% !important;
-        margin-top: 40px !important;
-        background: url("./assets/laptop.png") center no-repeat !important;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-areas: ". vd ."
-    }
+  .infocont {
+    margin: 50px 0 !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: ". ul .";
+  }
 
-    video {
-        grid-area: vd;
-        margin: 62px 0px 0px 0px !important;
-        width: 300px !important;
-    }
+  .infocont ul {
+    grid-area: ul;
+    text-align: center;
+  }
 
-    .formcont {
-        margin-top: 0 !important;
-    }
+  .tel {
+    margin: 0 !important;
+  }
 
-    .infocont {
-        margin: 50px 0 !important;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr; 
-        grid-template-areas: ". ul ."
-    }
+  nav {
+    display: none;
+  }
 
-    .infocont ul {
-        grid-area: ul;
-        text-align: center;
-    }
+  .mbnav {
+    grid-area: mobnv;
+    height: 200px;
+    display: inherit !important;
+    margin: 0 !important;
+    margin-top: 30px !important;
+    border-radius: 0 !important;
+    cursor: pointer;
+    text-align: center;
+  }
 
-    .tel {
-        margin: 0 !important;
-    }
+  .mbnav a {
+    background: #387a64 !important;
+    padding-top: 23px !important;
+    font-size: 27px;
+    border-radius: 0 !important;
+    color: var(--navigationcolor);
+  }
 
-    nav {
-        display: none;
-    }
-
-    .mbnav {
-        grid-area: mobnv;
-        height: 200px;
-        display: inherit !important;
-        margin: 0 !important;
-        margin-top: 30px !important;
-        border-radius: 0 !important;
-        cursor: pointer;
-        text-align: center;
-    }
-    
-    .mbnav a {
-        background: #387A64 !important;
-        padding-top: 23px !important;
-        font-size: 27px;
-        border-radius: 0 !important;
-        color: var(--navigationcolor);
-        
-    }
-
-    .mbnav a:hover {
-        background: #15855F !important;
-    }
+  .mbnav a:hover {
+    background: #15855f !important;
+  }
 }
-
-
-
-
-
-
-
 
 .mbnav {
-    display: none;
+  display: none;
 }
 
-
 .grid {
-    display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "header header"
-                         "maininfo maininfo"
-                         "content content"
-                         "contact contact"
-                         "footer footer";
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header header"
+    "maininfo maininfo"
+    "content content"
+    "contact contact"
+    "footer footer";
 }
 
 .maininfo {
-    grid-area: maininfo;
+  grid-area: maininfo;
 }
 
-
 .break {
-    height: 2px;
-    border-bottom: 1px solid rgb(150, 150, 150);
+  height: 2px;
+  border-bottom: 1px solid rgb(150, 150, 150);
 }
 
 .contact {
-    grid-area: contact;
+  grid-area: contact;
 }
 
 .centered {
-    position: absolute;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
 }
 
 .centered h1 {
-    font-size: 55px;
-    margin-top: 600px;
+  font-size: 55px;
+  margin-top: 600px;
 }
 
 .centered p {
-    font-size:25px;
-    padding-bottom: 30px;
-    
+  font-size: 25px;
+  padding-bottom: 30px;
 }
-
 
 .container {
-    position: relative;
-    text-align: left;
-    color: white;
+  position: relative;
+  text-align: left;
+  color: white;
 }
 
-
 .header {
-    grid-area: header;
-    background-color: var(--headerbackground);
-    z-index: 500;
+  grid-area: header;
+  background-color: var(--headerbackground);
+  z-index: 500;
 
-    position: fixed; 
-    top: 0; 
-    width: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
-    color:rgb(180, 180, 180);
-      
-    display:grid;
-    grid-template-columns: 1fr 500px 500px 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: ". logo nav .";
+  color: rgb(180, 180, 180);
+
+  display: grid;
+  grid-template-columns: 1fr 500px 500px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". logo nav .";
 }
 
 .logo {
-    grid-area: logo;
-    margin: 5px 0;
+  grid-area: logo;
+  margin: 5px 0;
 }
 
 .logo img {
-    height: 40px;
+  height: 40px;
 }
 
-
 .header nav {
-    grid-area: nav;
-    margin-top: 10px;
-
-
+  grid-area: nav;
+  margin-top: 10px;
 }
 
 .header ul {
-    background-color: none;
-    margin-right: 50px;
+  background-color: none;
+  margin-right: 50px;
 }
 
 .header li {
-   background-color: none;
-   display: inline-block;
-   margin: 5px;
-   float: right;
+  background-color: none;
+  display: inline-block;
+  margin: 5px;
+  float: right;
 }
 
 agm-map {
-    height: 300px;
-  }
+  height: 300px;
+}
 
 .iconwrap {
-    margin-top: 20px;
-   
+  margin-top: 20px;
 }
 
 .ic {
-    margin: 0 5px;
-    color: black;
-    text-shadow: 1px 1px 1px #ccc;
-    font-size: 2.5em;
+  margin: 0 5px;
+  color: black;
+  text-shadow: 1px 1px 1px #ccc;
+  font-size: 2.5em;
 }
 
 .ic:hover {
-    color:#15855F;
-    transition: 0.1s ease-in;
-    cursor: pointer;
+  color: #15855f;
+  transition: 0.1s ease-in;
+  cursor: pointer;
 }
 
-
-
 .inactive {
-    color: rgba(0, 0, 0, 0.308);
+  color: rgba(0, 0, 0, 0.308);
 }
 
 .inactive:hover {
-    color: rgba(0, 0, 0, 0.308);
-    cursor: default;
+  color: rgba(0, 0, 0, 0.308);
+  cursor: default;
 }
 
 .header nav a:hover {
-    border-radius: 0;
-    color: rgb(144, 182, 169);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
-    transition: 0.2s ease-in-out;
-    padding-bottom: 5px;
-    
+  border-radius: 0;
+  color: rgb(144, 182, 169);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  transition: 0.2s ease-in-out;
+  padding-bottom: 5px;
 }
 
 .header nav a {
-    cursor: pointer;
-    background: none;
-    margin-top: 5px;
-    padding: 0 10px;
-    text-decoration: none;
-    font-size: 20px;
-    color: var(--navigationcolor);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background: none;
+  margin-top: 5px;
+  padding: 0 10px;
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--navigationcolor);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .headpix {
-    grid-area: headpix;
-    background-image: url("./assets/cupback.jpg");
-    height: 500px; 
-    background-attachment: fixed;
-    background-position-y: 200px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  grid-area: headpix;
+  background-image: url("./assets/cupback.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position-y: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .maininfo a {
-    text-decoration: none;
-    color: white;
-    text-align: center;
-    background-color:var(--buttoncolor);
-    padding: 10px;
-    border-radius: 8px;
-    cursor: pointer;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  background-color: var(--buttoncolor);
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 #statusbox {
-    margin-top: 30px;
-    background: #15855f;
-    width: 80%;
-    margin: 0 auto;
-    padding: 7px 0;
-    color: white;
-    border-radius: 10px;
-    transition: 3s ease-in-out;
-    opacity: 0;
-    display: none;
+  margin-top: 30px;
+  background: #15855f;
+  width: 80%;
+  margin: 0 auto;
+  padding: 7px 0;
+  color: white;
+  border-radius: 10px;
+  transition: 3s ease-in-out;
+  opacity: 0;
+  display: none;
 }
-
 
 .tag {
-    padding: 4px 7px;
-    border-radius: 6px;
-    background-color:var(--buttoncolor);
-    color: white;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background-color: var(--buttoncolor);
+  color: white;
 }
-
 
 .taginfo {
-    padding: 4px 50px;
-    border-radius: 6px;
-    background-color:whitesmoke;
-    color: rgba(255, 255, 255, 0.459);
-    width: 270px;
-    margin: 3px 0;
+  padding: 4px 50px;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  color: rgba(255, 255, 255, 0.459);
+  width: 270px;
+  margin: 3px 0;
 }
 
-.taginfo a  {
-    text-decoration: none;
-    color: black;
+.taginfo a {
+  text-decoration: none;
+  color: black;
 }
 
 .taginfo:hover {
-    background-color: #0F6146;
-    transition: 0.2s ease-out;
+  background-color: #0f6146;
+  transition: 0.2s ease-out;
 }
 
 .taglist {
-    margin-top: 30px;
-    
+  margin-top: 30px;
 }
 
 .taglist li {
-    display: inline-block;
-    list-style-type: none;
+  display: inline-block;
+  list-style-type: none;
 }
 
 .content {
-    grid-area: content;
-    background-color: rgb(221, 221, 221);
-    display: block;
-    display:grid;
-    grid-template-columns: 1fr 500px 500px 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: ". contentco contentco .";
-
+  grid-area: content;
+  background-color: rgb(221, 221, 221);
+  display: block;
+  display: grid;
+  grid-template-columns: 1fr 500px 500px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: ". contentco contentco .";
 }
 
-
-
 .lapcont {
-    background: url("./assets/laptop.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 400px;
+  background: url("./assets/laptop.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 400px;
 }
 
 .lapcont video {
-    margin: 18px 0px 0px 61px;
+  margin: 18px 0px 0px 61px;
 }
 
 .txtwrp {
-    margin-top: 45px;
-    margin-left: 50px;
+  margin-top: 45px;
+  margin-left: 50px;
 }
 
 .txtwrp h2 {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .contentco {
-    grid-area: contentco;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 50px 0;
+  grid-area: contentco;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 50px 0;
 }
 
-
 .item {
-    margin: 110px 15px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    
+  margin: 110px 15px;
+  grid-column-start: 1;
+  grid-column-end: 2;
 }
 
 .item2 {
-    margin: 110px 10px;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    text-align: center;
+  margin: 110px 10px;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  text-align: center;
 }
 
-
 .contactgrid {
-    
-    display:grid;
-    grid-template-columns: 1fr 500px 500px 1fr;
-    grid-template-rows: auto;
-    grid-template-areas: "map map map map"
-                         ". conthd conthd ."
-                         ". infocont formcont .";
+  display: grid;
+  grid-template-columns: 1fr 500px 500px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "map map map map"
+    ". conthd conthd ."
+    ". infocont formcont .";
 }
 
 .contactgrid h1 {
-    grid-area: conthd;
-    text-align: center;
-    margin-top: 60px;
+  grid-area: conthd;
+  text-align: center;
+  margin-top: 60px;
 }
 
 .contactgrid li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 .formcont {
-    grid-area: formcont;
-    margin: 70px 40px;
-    text-align: center;
+  grid-area: formcont;
+  margin: 70px 40px;
+  text-align: center;
 }
 
 .formcont li {
-    margin: 7px 0;
+  margin: 7px 0;
 }
 
 .formcont input {
-    border-style: none;
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 10px;
-    padding: 3px 3px;
-    margin-right: 5px;
-    width: 40%;
+  border-style: none;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 10px;
+  padding: 3px 3px;
+  margin-right: 5px;
+  width: 40%;
 }
 
 .formcont textarea {
-    border-style: none;
-    max-width: 85%;
-    min-width: 85%;
-    max-height: 100px;
-    min-height: 65px;
-    background-color: whitesmoke;
-    color: black;
-    border-radius: 10px;
-
+  border-style: none;
+  max-width: 85%;
+  min-width: 85%;
+  max-height: 100px;
+  min-height: 65px;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 10px;
 }
 
 .tel {
-    margin-left: 35px;
+  margin-left: 35px;
 }
 
 .formcont h2 {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
 .formcont #sndbtn {
-    padding: 10px;
-    cursor: pointer;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .formcont #sndbtn:hover {
-    background: #15855F;
-    transition: 0.1s ease-in-out;
+  background: #15855f;
+  transition: 0.1s ease-in-out;
 }
 
 .infocont {
-    grid-area: infocont;
-    margin: 80px 50px;
-    font-size: 28px;
+  grid-area: infocont;
+  margin: 80px 50px;
+  font-size: 28px;
 }
 
 .infocont h2 {
-    margin: 15px 0;
+  margin: 15px 0;
 }
 
-
 .footer {
-    grid-area: footer;
-    background-color:var(--footerbackground) ;
-    height: 150px;  
-    text-align: center;
+  grid-area: footer;
+  background-color: var(--footerbackground);
+  height: 150px;
+  text-align: center;
 }
 
 .footer p {
-    color: rgb(255, 255, 255);
-    margin-top: 20px;   
+  color: rgb(255, 255, 255);
+  margin-top: 20px;
 }
 
 .footer img {
-    margin-top: 50px;
-    height: 30px;
+  margin-top: 50px;
+  height: 30px;
 }
 
 #map {
-    grid-area: map;
-    height: 400px;
-    width: 100%;
+  grid-area: map;
+  height: 400px;
+  width: 100%;
 }
