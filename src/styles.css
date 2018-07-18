@@ -243,6 +243,10 @@ agm-map {
   margin-top: 20px;
 }
 
+.iconwrap a {
+  text-decoration: none;
+}
+
 .ic {
   margin: 0 5px;
   color: black;
@@ -330,7 +334,6 @@ agm-map {
   border-radius: 6px;
   background-color: whitesmoke;
   color: rgba(255, 255, 255, 0.459);
-  width: 270px;
   margin: 3px 0;
 }
 
@@ -340,7 +343,7 @@ agm-map {
 }
 
 .taginfo:hover {
-  background-color: #0f6146;
+  background-color: #2e9a71;
   transition: 0.2s ease-out;
 }
 
