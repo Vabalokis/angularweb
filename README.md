@@ -1,4 +1,11 @@
+### Angular portfolio website
 
-# NgWebsite porfolio
 
-generated with angular CLI
+Technologies used:
+
+```
+Angular - components
+ngx-scroll-to - smooth scrolling
+CSS - responsive layout with media queries and css grid
+PHP - php mailer for contact form
+```
